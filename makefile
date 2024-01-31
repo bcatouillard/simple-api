@@ -13,4 +13,4 @@ dev: install
 	poetry run uvicorn app.main:app --reload
 
 run: install
-	poetry run uvicorn app.main:app
+	poetry run uvicorn app.main:app 
