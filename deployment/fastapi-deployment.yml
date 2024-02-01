@@ -8,11 +8,11 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      app: fastapi
+      app.kubernetes.io/name: fastapi
   template:
     metadata:
       labels:
-        app: fastapi
+        app.kubernetes.io/name: fastapi
     spec:
       containers:
       - name: fastapi
