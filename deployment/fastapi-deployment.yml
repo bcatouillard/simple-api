@@ -27,3 +27,9 @@ spec:
           requests:
             memory: "64Mi"
             cpu: "10m"
+        env:
+        - name: PROJECT_NAME
+          valueFrom:
+            configMapKeyRef:
+              name: fastapi-cfg
+              key: PROJECT_NAME
