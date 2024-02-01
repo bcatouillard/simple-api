@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fastapi-deployment
+  labels:
+    app: fastapi
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: fastapi
+  template:
+    metadata:
+      labels:
+        app: fastapi
+    spec:
+      containers:
+      - name: fastapi
+        image: fastapi-cours:latest
+        ports:
+        - containerPort: 8000
+        imagePullPolicy: Never
+        resources:
+          limits:
+            memory: "256Mi"
+            cpu: "30m"
+          requests:
+            memory: "64Mi"
+            cpu: "10m"
